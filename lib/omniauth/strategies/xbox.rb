@@ -7,7 +7,7 @@ module OmniAuth
 
       option :client_options,
              site: 'https://xbl.io/api/v2',
-             authorize_url:"https://xbl.io/app/auth/#{ENV['XBOX_PUBLIC_KEY']}",
+             authorize_url:"https://xbl.io/app/auth",
              token_url: 'https://xbl.io/app/claim'
 
       option :authorize_options, %i[permissions prompt]
