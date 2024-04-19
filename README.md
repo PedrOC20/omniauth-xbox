@@ -20,24 +20,7 @@ OmniAuth XBOX is a Rack middleware. If you're not familiar with OmniAuth, we rec
 
 ```ruby
 Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :xbox, ENV['XBOX_APP_KEY'], ENV['XBOX_CLIENT_ID']
-end
-```
-
-By default, XBOX does not return a user's email address. You can request access to additional resources by setting scopes. For example, to get a user's email, you would set the scope to 'email'.
-
-```ruby
-Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :xbox, ENV['XBOX_APP_KEY'], ENV['XBOX_CLIENT_ID'], scope: 'basic_profile'
-end
-```
-
-You can pass multiple scopes in the same string. For example, to get a user's XBOX account info, you would set the scope to 'email identify'.
-
-
-```ruby
-Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :xbox, ENV['XBOX_APP_KEY'], ENV['XBOX_CLIENT_ID'], scope: 'basic_profile'
+  provider :xbox, ENV['XBOX_PUBLIC_KEY']
 end
 ```
 

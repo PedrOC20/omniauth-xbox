@@ -13,7 +13,7 @@ end
 use Rack::Session::Cookie, secret: '123456789'
 
 use OmniAuth::Builder do
-  provider :xbox, ENV['XBOX_APP_KEY'], ENV['XBOX_CLIENT_ID'], scope: 'basic_profile'
+  provider :xbox, ENV['XBOX_PUBLIC_KEY']
 end
 
 get '/' do
