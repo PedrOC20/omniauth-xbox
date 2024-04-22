@@ -29,7 +29,7 @@ You can also specify a callback URL by adding callback_url to the provider optio
 
 ```ruby
 Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :xbox, ENV['XBOX_APP_KEY'], ENV['XBOX_CLIENT_ID'], scope: 'basic_profile', callback_url: 'https://someurl.com/users/auth/xbox/callback'
+  provider :xbox, ENV['XBOX_PUBLIC_KEY'], callback_url: 'https://someurl.com/users/auth/xbox/callback'
 end
 ```
 

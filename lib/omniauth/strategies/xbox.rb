@@ -5,9 +5,11 @@ module OmniAuth
     class Xbox < OmniAuth::Strategies::OAuth2
       option :name, 'xbox'
 
+      option :client_id, nil
+      option :client_secret, nil
       option :client_options,
              site: 'https://xbl.io/api/v2',
-             authorize_url:"https://xbl.io/app/auth",
+             authorize_url:"https://xbl.io/app/auth/#{ENV['XBOX_PUBLIC_KEY']}",
              token_url: 'https://xbl.io/app/claim'
 
       option :authorize_options, %i[permissions prompt]
