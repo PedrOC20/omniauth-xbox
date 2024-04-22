@@ -33,6 +33,13 @@ module OmniAuth
         @raw_info ||= access_token.get("https://xbl.io/api/v2/account").parsed
       end
 
+      def authorize_params
+        super.tap do |params|
+          # params[:public_key] = ENV['XBOX_PUBLIC_KEY']
+          params.delete(:client_id) # Remove client_id from params
+        end
+      end
+
       def build_access_token
         verifier = request.params['code']
         params = {:redirect_uri => callback_url}.merge(token_params.to_hash(:symbolize_keys => true))
